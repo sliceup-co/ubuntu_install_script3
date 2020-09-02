@@ -307,6 +307,10 @@ sleep 2
     sudo /bin/systemctl start grafana-server
 
     sudo apt-get install -y jq
+    sudo grafana-cli plugins install magnesium-wordcloud-panel
+    sleep 3
+    sudo service grafana-server restart
+    sleep 3
     sudo /bin/systemctl stop grafana-server
     sleep 5
     sudo /bin/systemctl start grafana-server
