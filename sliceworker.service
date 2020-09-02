@@ -1,0 +1,11 @@
+[Unit]
+Description=Slice Worker Start
+
+[Service]
+Restart=always
+RestartSec=3
+ExecStart=/usr/bin/python3 /opt/sliceup/executables/task-exec-monitor.py
+
+
+[Install]
+WantedBy=multi-user.target

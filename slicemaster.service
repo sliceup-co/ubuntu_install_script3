@@ -1,0 +1,10 @@
+[Unit]
+Description=Slice Master Start
+
+[Service]
+Restart=always
+RestartSec=3
+ExecStart=/opt/sliceup/scripts/masterstart.sh
+
+[Install]
+WantedBy=multi-user.target
