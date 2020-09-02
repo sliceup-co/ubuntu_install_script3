@@ -1,5 +1,5 @@
 #!/bin/bash
-    echo -e "\e[96m Do not run this script with sudo. The script will use sudo when appropiate.\e[39m"
+    echo -e "\e[96m Do not run this script with sudo. The script will use sudo when appropriate.\e[39m"
     echo -e "\e[96m This script is meant to be run with Ubuntu 18.04. It might work with higher versions but it hasn't been tested.\e[39m"
     echo -e "\e[96m Please ensure that all servers in the cluster have full access to each other.\e[39m"
     echo -e "\e[96m Make sure that all the worker nodes have the same password. \e[39m"
