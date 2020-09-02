@@ -311,7 +311,7 @@ sleep 2
     sleep 5
     sudo /bin/systemctl start grafana-server
     sleep 5
-    id=$(curl -k -X GET -H "Content-Type: application/json" https://admin:admin@127.0.0.1:3000/api/dashboards/uid/kC8AXaZMz | jq .dashboard.id)
+    id=$(curl -k -X GET -H "Content-Type: application/json" https://admin:admin@127.0.0.1:3000/api/dashboards/uid/wf5pdkHNa | jq .dashboard.id)
     echo -e "\e[96m Dashboard ID is $id \e[39m"
     curl -k -X PUT -H "Content-Type: application/json" -d '{"theme": "", "homeDashboardId": '$id', "timezone": ""}' https://admin:admin@127.0.0.1:3000/api/org/preferences
 
@@ -319,7 +319,7 @@ sleep 2
     sleep 2
 
 #Enable service at startup
-echo -e "\e[96m Enable SlicePrimw service  \e[39m"
+echo -e "\e[96m Enable SlicePrime service  \e[39m"
 sudo systemctl enable slicemaster
 echo -e "\e[96m Start SlicePrime service  \e[39m"
 sudo systemctl start slicemaster
