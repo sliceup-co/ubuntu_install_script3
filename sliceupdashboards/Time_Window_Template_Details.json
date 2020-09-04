@@ -15,8 +15,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 36,
-  "iteration": 1599014663128,
+  "id": 69,
+  "iteration": 1599255816893,
   "links": [],
   "panels": [
     {
@@ -204,7 +204,12 @@
       "id": 6,
       "options": {
         "showHeader": true,
-        "sortBy": []
+        "sortBy": [
+          {
+            "desc": true,
+            "displayName": "record_score"
+          }
+        ]
       },
       "pluginVersion": "7.0.4",
       "targets": [
@@ -585,5 +590,5 @@
   "timezone": "",
   "title": "Time Window Template Details",
   "uid": "VeYlcTSHa",
-  "version": 1
+  "version": 2
 }
