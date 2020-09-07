@@ -17,8 +17,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 35,
-  "iteration": 1599014618963,
+  "id": 63,
+  "iteration": 1599515284501,
   "links": [],
   "panels": [
     {
@@ -1052,14 +1052,14 @@
           "value": ""
         },
         "datasource": "SliceUp",
-        "definition": "SELECT \n       template_id As \"Template\",\n       MAX(start_time) AS \"Most Recent\",\n       MAX(anomalous_score) AS \"Criticality\",\n       COUNT(time_window_id) AS \"Occurrences\",\n       template_version AS \"Version\"\nFROM\n  (SELECT a.time_window_id,\n          b.template_id,\n          b.template_version,\n          a.anomalous_score,\n          a.start_time\n   FROM time_window_templates b\n   INNER JOIN\n     (SELECT time_window_id,\n             start_time,\n             anomalous_score,\n             MAX(sentiment_contribution)\n      FROM time_window_templates\n      INNER JOIN time_windows ON time_window_id = time_windows.id\n      WHERE time_windows.anomalous = TRUE and start_time BETWEEN $__from AND $__to\n      GROUP BY time_window_id,\n               start_time,\n               anomalous_score\n      ORDER BY time_window_id) a ON b.sentiment_contribution = a.max\n   AND b.time_window_id = a.time_window_id) c\nGROUP BY c.template_id,\n         c.template_version\nORDER BY \"Criticality\" DESC;",
+        "definition": "select\ntemplate_id as \"Template\",\nmax_anomalous_score as \"Criticality\"\nFrom anom_highest_contrib_template\nwhere max_start_time BETWEEN $__from AND $__to\norder by \"Criticality\" DESC;",
         "hide": 2,
         "includeAll": false,
         "label": null,
         "multi": false,
         "name": "LogTempLoad",
         "options": [],
-        "query": "SELECT \n       template_id As \"Template\",\n       MAX(start_time) AS \"Most Recent\",\n       MAX(anomalous_score) AS \"Criticality\",\n       COUNT(time_window_id) AS \"Occurrences\",\n       template_version AS \"Version\"\nFROM\n  (SELECT a.time_window_id,\n          b.template_id,\n          b.template_version,\n          a.anomalous_score,\n          a.start_time\n   FROM time_window_templates b\n   INNER JOIN\n     (SELECT time_window_id,\n             start_time,\n             anomalous_score,\n             MAX(sentiment_contribution)\n      FROM time_window_templates\n      INNER JOIN time_windows ON time_window_id = time_windows.id\n      WHERE time_windows.anomalous = TRUE and start_time BETWEEN $__from AND $__to\n      GROUP BY time_window_id,\n               start_time,\n               anomalous_score\n      ORDER BY time_window_id) a ON b.sentiment_contribution = a.max\n   AND b.time_window_id = a.time_window_id) c\nGROUP BY c.template_id,\n         c.template_version\nORDER BY \"Criticality\" DESC;",
+        "query": "select\ntemplate_id as \"Template\",\nmax_anomalous_score as \"Criticality\"\nFrom anom_highest_contrib_template\nwhere max_start_time BETWEEN $__from AND $__to\norder by \"Criticality\" DESC;",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -1097,8 +1097,8 @@
     ]
   },
   "time": {
-    "from": "now-24h",
-    "to": "now"
+    "from": "2020-08-24T04:36:10.000Z",
+    "to": "2020-08-27T12:31:00.000Z"
   },
   "timepicker": {
     "refresh_intervals": [
@@ -1116,5 +1116,5 @@
   "timezone": "browser",
   "title": "SliceUpHomePage",
   "uid": "wf5pdkHNa",
-  "version": 9
+  "version": 3
 }
