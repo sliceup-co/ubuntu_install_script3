@@ -18,7 +18,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 64,
-  "iteration": 1599519422446,
+  "iteration": 1599602527171,
   "links": [],
   "panels": [
     {
@@ -971,28 +971,24 @@
         "useTags": false
       },
       {
-        "allValue": null,
         "current": {
           "selected": false,
           "text": "1",
           "value": "1"
         },
         "hide": 2,
-        "includeAll": false,
         "label": null,
-        "multi": false,
         "name": "Ver",
         "options": [
           {
-            "selected": false,
+            "selected": true,
             "text": "1",
             "value": "1"
           }
         ],
         "query": "1",
-        "queryValue": "1",
         "skipUrlSync": false,
-        "type": "custom"
+        "type": "constant"
       }
     ]
   },
@@ -1016,5 +1012,5 @@
   "timezone": "browser",
   "title": "SliceUpHomeWordCloud",
   "uid": "1z4oS9HHi",
-  "version": 2
+  "version": 10
 }
