@@ -18,7 +18,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 63,
-  "iteration": 1599519362318,
+  "iteration": 1599602491219,
   "links": [],
   "panels": [
     {
@@ -1085,12 +1085,11 @@
         "options": [
           {
             "selected": true,
-            "text": "1",
-            "value": "1"
+            "text": "%",
+            "value": "%"
           }
         ],
-        "query": "1",
-        "queryValue": "1",
+        "query": "%",
         "skipUrlSync": false,
         "type": "custom"
       }
@@ -1116,5 +1115,5 @@
   "timezone": "browser",
   "title": "SliceUpHomePage",
   "uid": "wf5pdkHNa",
-  "version": 3
+  "version": 7
 }
