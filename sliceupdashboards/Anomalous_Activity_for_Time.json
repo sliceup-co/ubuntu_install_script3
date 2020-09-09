@@ -15,8 +15,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 37,
-  "iteration": 1599014546323,
+  "id": 18,
+  "iteration": 1599664527780,
   "links": [],
   "panels": [
     {
@@ -170,7 +170,7 @@
                     "id": 0,
                     "operator": "",
                     "text": "LOW",
-                    "to": "1",
+                    "to": "2.9999",
                     "type": 2
                   },
                   {
@@ -527,5 +527,5 @@
   "timezone": "",
   "title": "Anomalous Activity for Time",
   "uid": "aBK-0zHNl",
-  "version": 3
+  "version": 2
 }
