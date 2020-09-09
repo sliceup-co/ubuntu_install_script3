@@ -18,7 +18,7 @@
   "gnetId": null,
   "graphTooltip": 0,
   "id": 16,
-  "iteration": 1599664453401,
+  "iteration": 1599673586117,
   "links": [],
   "panels": [
     {
@@ -150,7 +150,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT\n  start_time/1000 AS \"time\",\n  sum (anomalous_score) as \"Important Anomaly Score\"\nFROM anomaly_host_detail\nwhere anomalous_score > 3.7 and anomalous_score < 6\ngroup by start_time\nORDER BY start_time\n",
+          "rawSql": "SELECT\n  start_time/1000 AS \"time\",\n  sum (anomalous_score) as \"Important Anomaly Score\"\nFROM anomaly_host_detail\nwhere anomalous_score >= 3 and anomalous_score < 6\ngroup by start_time\nORDER BY start_time\n",
           "refId": "C",
           "select": [
             [
@@ -176,7 +176,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT\n  start_time/1000 AS \"time\",\n  sum (anomalous_score) as \"Low Anomaly Score\"\nFROM anomaly_host_detail\nwhere anomalous_score < 3.7\ngroup by start_time\nORDER BY start_time\n",
+          "rawSql": "SELECT\n  start_time/1000 AS \"time\",\n  sum (anomalous_score) as \"Low Anomaly Score\"\nFROM anomaly_host_detail\nwhere anomalous_score < 3\ngroup by start_time\nORDER BY start_time\n",
           "refId": "D",
           "select": [
             [
@@ -1115,5 +1115,5 @@
   "timezone": "browser",
   "title": "SliceUpHomePage",
   "uid": "wf5pdkHNa",
-  "version": 3
+  "version": 2
 }
