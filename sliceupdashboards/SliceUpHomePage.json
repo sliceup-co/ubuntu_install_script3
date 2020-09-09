@@ -17,8 +17,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 63,
-  "iteration": 1599602491219,
+  "id": 16,
+  "iteration": 1599664453401,
   "links": [],
   "panels": [
     {
@@ -719,7 +719,7 @@
           "hide": false,
           "metricColumn": "unit_name",
           "rawQuery": true,
-          "rawSql": "select\r\nmax_start_time as \"Most Recent\",\r\nmax_anomalous_score as \"Criticality\",\r\ntime_window_count as \"Occurrences\",\r\ntemplate_id as \"Template\",\r\ntemplate_version as \"Version\"\r\nFrom anom_highest_contrib_template\r\nwhere max_start_time BETWEEN $__from AND $__to\r\norder by \"Criticality\" DESC;",
+          "rawSql": "SELECT max(\"Anomaly Time\") AS \"Most Recent\",\n       max(anomalous_score) AS \"Criticality\",\n       count(time_window_id) AS \"Occurrences\",\n       template_id as \"Template\",\n       template_version as \"Version\"\nFROM\n    anom_detail_list\nWHERE \"Anomaly Time\" BETWEEN $__from AND $__to\nGROUP BY template_id,\n         template_version\nORDER BY \"Criticality\" DESC;\n",
           "refId": "A",
           "select": [
             [
@@ -1060,7 +1060,7 @@
         "name": "LogTempLoad",
         "options": [],
         "query": "select\ntemplate_id as \"Template\",\nmax_anomalous_score as \"Criticality\"\nFrom anom_highest_contrib_template\nwhere max_start_time BETWEEN $__from AND $__to\norder by \"Criticality\" DESC;",
-        "refresh": 1,
+        "refresh": 0,
         "regex": "",
         "skipUrlSync": false,
         "sort": 0,
@@ -1084,7 +1084,7 @@
         "name": "Ver",
         "options": [
           {
-            "selected": true,
+            "selected": false,
             "text": "%",
             "value": "%"
           }
@@ -1115,5 +1115,5 @@
   "timezone": "browser",
   "title": "SliceUpHomePage",
   "uid": "wf5pdkHNa",
-  "version": 7
+  "version": 3
 }
