@@ -15,8 +15,8 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 69,
-  "iteration": 1599255816893,
+  "id": 20,
+  "iteration": 1599664507235,
   "links": [],
   "panels": [
     {
@@ -420,7 +420,7 @@
             "properties": [
               {
                 "id": "custom.width",
-                "value": 523
+                "value": 468
               }
             ]
           },
@@ -432,7 +432,7 @@
             "properties": [
               {
                 "id": "custom.width",
-                "value": 176
+                "value": 225
               },
               {
                 "id": "unit",
@@ -477,7 +477,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "select TO_TIMESTAMP(timestamp, 'YYYY-MM-DD HH24:MI:SS') as \"Time\", host, appname, severity\nfrom template_table_${template_id}_${template_version};\n",
+          "rawSql": "select TO_TIMESTAMP(timestamp, 'YYYY-MM-DD HH24:MI:SS') as \"Time\", host, appname, severity\nfrom template_table_${template_id}_${template_version}\nwhere time_window_id=${time_window_id};",
           "refId": "A",
           "select": [
             [
@@ -590,5 +590,5 @@
   "timezone": "",
   "title": "Time Window Template Details",
   "uid": "VeYlcTSHa",
-  "version": 2
+  "version": 6
 }
