@@ -19,7 +19,7 @@ executablestest=$(ls executables.tar.gz)
 sudo apt-get install -y sshpass
 
 #Get password for postgres
-    echo -e "\e[96m Please enter the password for the database.  \e[39m"
+    echo -e "\e[96m Please choose and enter the password for the database.  \e[39m"
     read psqlpass
 
 
